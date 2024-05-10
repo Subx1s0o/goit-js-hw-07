@@ -11,14 +11,15 @@ const boxes = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   let size = 30;
+  let htmlString = "";
+
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement("div");
-    box.style.backgroundColor = getRandomHexColor();
-    box.style.width = size + "px";
-    box.style.height = size + "px";
+    const color = getRandomHexColor();
+    htmlString += `<div style="background-color: ${color}; width: ${size}px; height: ${size}px"></div>`;
     size += 10;
-    boxes.appendChild(box);
   }
+
+  boxes.innerHTML = htmlString;
 }
 
 createBtn.addEventListener("click", () => {
@@ -28,6 +29,7 @@ createBtn.addEventListener("click", () => {
 
   if (val >= atrMin && val <= atrMax) {
     createBoxes(input.value);
+    input.value = "";
   }
 });
 

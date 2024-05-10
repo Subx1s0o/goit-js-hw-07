@@ -27,10 +27,5 @@ const images = [
 
 const galleryUl = document.querySelector(".gallery");
 images.forEach((el) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-  img.setAttribute("src", el.url);
-  img.setAttribute("alt", el.alt);
-  li.appendChild(img);
-  galleryUl.appendChild(li);
+  galleryUl.innerHTML += `<li><img src="${el.url}" alt="${el.alt}"></li>`;
 });
