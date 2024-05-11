@@ -26,6 +26,9 @@ const images = [
 ];
 
 const galleryUl = document.querySelector(".gallery");
+let myElements = "";
 images.forEach((el) => {
-  galleryUl.innerHTML += `<li><img src="${el.url}" alt="${el.alt}"></li>`;
+  myElements += `<li><img src="${el.url}" alt="${el.alt}"></li>`;
 });
+
+galleryUl.innerHTML += myElements;
